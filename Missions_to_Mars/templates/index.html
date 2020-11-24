@@ -10,21 +10,19 @@
 </head>
 
 <body>
-  <div class="container">
-
+  <div class="container-fluid">
     <div class="jumbotron text-center">
-      <h1>Mission to Mars</h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
-
-    <!-- Craigslist Listings -->
-    <div class="row" id="craiglist-listings">
-      <div class="col-md-12">
-        <h4 class="heading">{{listings.price}} {{listings.headline}}</h4>
-        <small>{{listings.hood}}</small>
-      </div>
-    </div>
-
+    <h2>Latest Mars News</h2>
+    <h3>{{ mars.news_title }}</h3>
+    <p>{{ mars.news_p }}</p>
+    <h2>Featured Mars Image</h2>
+    <img src="{{ mars.featured_image_url }}" alt="Featured Image">
+    <!-- <h2>The typical weather in Costa Rica is:</h2>
+    <h3>Max Temp: {{ vacation.max_temp }}</h3>
+    <h3>Min Temp: {{ vacation.min_temp }}</h3> -->
+  </div>
   </div>
 </body>
 

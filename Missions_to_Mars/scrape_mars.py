@@ -33,10 +33,10 @@ def scrape_info():
     news_p = news_p.text
     news_p
 
-    news_data = {
-        "news_title":news_title,
-        "news_p":news_p
-    }
+    # news_data = {
+    #     "news_title":news_title,
+    #     "news_p":news_p
+    # }
 
     ###Featured Image
     url_two = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
@@ -55,9 +55,9 @@ def scrape_info():
     featured_image_url = f'https://www.jpl.nasa.gov/{image}'
     featured_image_url
 
-    featured_image_data = {
-        "featured_image_url":featured_image_url
-    }
+    # featured_image_data = {
+    #     "featured_image_url":featured_image_url
+    # }
 
     ###Mars Facts
     url_three = 'https://space-facts.com/mars/'
@@ -79,17 +79,27 @@ def scrape_info():
     #html_table_string
 
     ###Mars Hemispheres  - unfinished part
-    hemisphere_image_urls = [
-    {"title": "Valles Marineris Hemisphere", "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/valles_marineris_enhanced.tif/full.jpg"},
-    {"title": "Cerberus Hemisphere", "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/cerberus_enhanced.tif/full.jpg"},
-    {"title": "Schiaparelli Hemisphere", "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/schiaparelli_enhanced.tif/full.jpg"},
-    {"title": "Syrtis Major Hemisphere", "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/syrtis_major_enhanced.tif/full.jpg"},
+    # hemisphere_image_urls = [
+    # {"title": "Valles Marineris Hemisphere", "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/valles_marineris_enhanced.tif/full.jpg"},
+    # {"title": "Cerberus Hemisphere", "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/cerberus_enhanced.tif/full.jpg"},
+    # {"title": "Schiaparelli Hemisphere", "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/schiaparelli_enhanced.tif/full.jpg"},
+    # {"title": "Syrtis Major Hemisphere", "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/syrtis_major_enhanced.tif/full.jpg"},
+    # ]
+
+    final_data = [ 
+        {"news_title":news_title, "news_p":news_p},
+        {"featured_image_url":featured_image_url},
+        {"html_table_string":html_table_string},
+        {"title": "Valles Marineris Hemisphere", "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/valles_marineris_enhanced.tif/full.jpg"},
+        {"title": "Cerberus Hemisphere", "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/cerberus_enhanced.tif/full.jpg"},
+        {"title": "Schiaparelli Hemisphere", "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/schiaparelli_enhanced.tif/full.jpg"},
+        {"title": "Syrtis Major Hemisphere", "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/syrtis_major_enhanced.tif/full.jpg"}
+
     ]
-
-
 
     # Close the browser after scraping
     browser.quit()
 
     # Return results
-    return news_data, featured_image_data, html_table_string, hemisphere_image_urls
+    # return news_data, featured_image_data, html_table_string, hemisphere_image_urls
+    return final_data
