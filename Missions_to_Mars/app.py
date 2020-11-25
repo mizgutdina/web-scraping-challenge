@@ -14,7 +14,7 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 def home():
     # Find one record of data from the mongo database
     destination_data = mongo.db.collection.find_one()
-
+    #table_markup = Markup(d_data["table"])
     # Return template and data
     return render_template("index.html", mars=destination_data)
 
